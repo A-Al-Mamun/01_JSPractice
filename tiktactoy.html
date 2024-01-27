@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toy Game | JavaScripts</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0 auto;
+    }
+    .day-night{
+        margin: 20px;
+        position: relative;
+    }
+    #day, #night{
+        font-size: 24px;
+        position: absolute;
+    }
+    #day{
+        color: #fff;
+        display: none;
+    }
+
+    .game{
+        margin: 0 auto;
+        width: 500px;
+        height: 500px;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        border: 2px solid black;
+        display: grid;
+        grid-template-columns: 33% 34% 33%;
+        grid-template-rows: 33% 34% 33%;
+        text-align: center;
+        align-items: center;
+    }
+    .game #block1,#block2,#block3,#block4,#block5,#block6,#block7,#block8,#block9{
+        border: 1px solid black;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+    }
+    .turn{
+        width: 200px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+</style>
+<body>
+    <div class="day-night">
+        <i class="fas fa-sun" id="day" onclick="sunnyDay()"></i>
+        <i class="fas fa-moon" id="night" onclick="moonNight()"></i>
+    </div>
+    <div class="game">
+        <div id="block1" onclick="turn(1)">01</div>
+        <div id="block2" onclick="turn(2)">02</div>
+        <div id="block3" onclick="turn(3)">03</div>
+        <div id="block4" onclick="turn(4)">04</div>
+        <div id="block5" onclick="turn(5)">05</div>
+        <div id="block6" onclick="turn(6)">06</div>
+        <div id="block7" onclick="turn(7)">07</div>
+        <div id="block8" onclick="turn(8)">08</div>
+        <div id="block9" onclick="turn(9)">09</div>
+    </div>
+    <div class="turn">
+        <button onclick="turnRed()" id="player1">Player 1</button>
+        <button onclick="turnYellow()" id="player2">Player 2</button>
+    </div>
+
+    <script>
+
+        var game = document.querySelector('.game');
+        var b1 = document.querySelector('#block1');
+        var b2 = document.querySelector('#block2');
+        var b3 = document.querySelector('#block3');
+        var b4 = document.querySelector('#block4');
+        var b5 = document.querySelector('#block5');
+        var b6 = document.querySelector('#block6');
+        var b7 = document.querySelector('#block7');
+        var b8 = document.querySelector('#block8');
+        var b9 = document.querySelector('#block9');
+
+        var t = 0;
+        var turn = (t) => {
+            if(t == 1){
+                if(b1.style.background != 'red'){
+                    b1.style.background = 'red';
+                }else{
+                    b1.style.background = 'yellow';
+                }
+            }else if(t == 2){
+                if(b2.style.background != 'red'){
+                    b2.style.background = 'red';
+                }else{
+                    b2.style.background = 'yellow';
+                }
+            }else if(t == 3){
+                if(b3.style.background != 'red'){
+                    b3.style.background = 'red';
+                }else{
+                    b3.style.background = 'yellow';
+                }
+            }else if(t == 4){
+                if(b4.style.background != 'red'){
+                    b4.style.background = 'red';
+                }else{
+                    b4.style.background = 'yellow';
+                }
+            }else if(t == 5){
+                if(b5.style.background != 'red'){
+                    b5.style.background = 'red';
+                }else{
+                    b5.style.background = 'yellow';
+                }
+            }else if(t == 6){
+                if(b6.style.background != 'red'){
+                    b6.style.background = 'red';
+                }else{
+                    b6.style.background = 'yellow';
+                }
+            }else if(t == 7){
+                if(b7.style.background != 'red'){
+                    b7.style.background = 'red';
+                }else{
+                    b7.style.background = 'yellow';
+                }
+            }else if(t == 8){
+                if(b8.style.background != 'red'){
+                    b8.style.background = 'red';
+                }else{
+                    b8.style.background = 'yellow';
+                }
+            }else if(t == 9){
+                if(b9.style.background != 'red'){
+                    b9.style.background = 'red';
+                }else{
+                    b9.style.background = 'yellow';
+                }
+            }
+        };
+
+
+        // var player1 = document.getElementById('player1').value = 0;
+        // var player2 = document.getElementById('player2').value = 2;
+        
+
+        // const turn = () => {
+        //     if(player1 == 1){
+        //         turnRed();
+        //     }else if(player2 == 2){
+        //         turnYellow();
+        //     }
+        // };
+        const allWhiteColor = () =>{
+            game.style.borderColor = '#fff';
+            b1.style.borderColor = '#fff';
+            b2.style.borderColor = '#fff';
+            b3.style.borderColor = '#fff';
+            b4.style.borderColor = '#fff';
+            b5.style.borderColor = '#fff';
+            b6.style.borderColor = '#fff';
+            b7.style.borderColor = '#fff';
+            b8.style.borderColor = '#fff';
+            b9.style.borderColor = '#fff';
+
+            b1.style.color = "#fff";
+            b2.style.color = "#fff";
+            b3.style.color = "#fff";
+            b4.style.color = "#fff";
+            b5.style.color = "#fff";
+            b6.style.color = "#fff";
+            b7.style.color = "#fff";
+            b8.style.color = "#fff";
+            b9.style.color = "#fff";
+        }
+        const allBlackColor = () =>{
+            game.style.borderColor = '#000';
+            b1.style.borderColor = '#000';
+            b2.style.borderColor = '#000';
+            b3.style.borderColor = '#000';
+            b4.style.borderColor = '#000';
+            b5.style.borderColor = '#000';
+            b6.style.borderColor = '#000';
+            b7.style.borderColor = '#000';
+            b8.style.borderColor = '#000';
+            b9.style.borderColor = '#000';
+
+            b1.style.color = "#000";
+            b2.style.color = "#000";
+            b3.style.color = "#000";
+            b4.style.color = "#000";
+            b5.style.color = "#000";
+            b6.style.color = "#000";
+            b7.style.color = "#000";
+            b8.style.color = "#000";
+            b9.style.color = "#000";
+        }
+
+        const sunnyDay = () => {
+            var body = document.querySelector("body");
+            var day = document.querySelector("#day");
+            var night = document.querySelector("#night");
+            body.style.background = '#fff';
+            night.style.display = 'block';
+            day.style.display = 'none';
+            
+            allBlackColor();
+        
+        }
+
+        const moonNight = () => {
+            var body = document.querySelector("body");
+            
+            var day = document.querySelector("#day");
+            var night = document.querySelector("#night");
+            body.style.background = 'black';
+            night.style.display = 'none';
+            day.style.display = 'block';
+            
+            allWhiteColor();
+        }
+
+        
+    </script>
+</body>
+</html>

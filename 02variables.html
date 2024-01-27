@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variable Learn | JavaScripts</title>
+</head>
+<body>
+    <p>Cart Quantity</p>
+    <div class="function-cart">
+        <button type="submit" onclick="showQuantity()">Show Quantity</button>
+        <button type="submit" onclick="addToCart()">Add to Cart</button>
+        <button type="submit" id="two" onclick="addToCart(cartQuantity = cartQuantity + 1)">+2</button>
+        <button type="submit" id="three" onclick="addToCart(cartQuantity = cartQuantity + 2)">+3</button>
+        <button type="reset" onclick="reSet()">Reset Cart</button>
+    </div>
+
+    <script>
+        let cartQuantity = 0;
+        let inc2 = document.getElementById('two');
+        let inc3 = document.getElementById('three');
+        function showQuantity(){
+            if(false){
+                console.log('Show Quantity :' + 0);
+            }else{
+                console.log('Quantity Item : ' + cartQuantity);
+            }
+        }
+
+        function addToCart(){
+            if(false){
+                cartQuantity = 0;
+            }
+            else{
+                cartQuantity++;
+                console.log(`Quantity Item : ${cartQuantity}`);
+                return cartQuantity;
+            }
+        }
+        function reSet(){
+            cartQuantity = 0;
+            console.log(`Quantity was reset`);
+            console.log(`Quantity Item : ${cartQuantity}`);
+            return cartQuantity;
+        }
+    </script>
+</body>
+</html>
