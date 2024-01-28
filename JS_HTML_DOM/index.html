@@ -4,6 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript HTML DOM Learning And Practice | Created by A-Al-Mamun</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #app{
+            font-size: 5rem;
+            font-weight: 900;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 5px 5px 8px #00000080;
+        }
+    </style>
 </head>
 <body>
     <div id="app"></div>
@@ -11,7 +28,7 @@
     <script>
         let msg = document.getElementById('app');
         msg.innerText = "Hello World";
-        console.log(msg.classList);
+        console.log(msg);
         console.log(msg.innerHTML);
 
     </script>
