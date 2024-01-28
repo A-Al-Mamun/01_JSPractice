@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript HTML DOM Learning And Practice | Form Validation | Created by A-Al-Mamun</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #app{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 5px 5px 8px #00000080;
+        }
+        .container{
+            border: 1px solid #000;
+            padding: 50px;
+            display: flex;
+            gap: 2rem;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container">
+            <form id="frm" onsubmit="getValide()">
+                <input type="text" name="text" id="">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <script> 
+        function getValide() {
+            const text = document.forms['frm']['text'].value;
+            let store = '';
+            for(let i = 0; i < text.length; i++){
+                store += text[i];     
+            }
+            if( store == ''){
+                alert('Please Enter Valid Value');
+                return false;
+            }else {
+                alert(store);
+            }
+        }
+
+    </script>
+</body>
+</html>
