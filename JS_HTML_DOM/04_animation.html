@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript HTML DOM Learning And Practice | Property For Change | Created by A-Al-Mamun</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #app{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 5px 5px 8px #00000080;
+        }
+        .container{
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            position: relative;
+            
+        }
+        .item{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: red;
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container"  onclick="animate()">
+            <div class="item"></div>
+        </div>
+    </div>
+
+    <script> 
+        function animate(){
+            const item = document.getElementsByClassName('item')[0];
+            let pos = 0;
+            let id = null;
+
+            clearInterval(id);
+
+            id = setInterval(frame, 3);
+
+            function frame(){
+                if(pos == 180){
+                    clearInterval(id);
+                }else{
+                    pos++;
+                    item.style.top = pos + 'px';
+                    item.style.left = pos + 'px';
+                }
+            }
+
+        }
+    </script>
+</body>
