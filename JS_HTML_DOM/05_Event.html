@@ -37,6 +37,7 @@
             bottom: 0;
             right: 0;
             color: #fff;
+            padding: 2px 10px ;
         }
         
     </style>
@@ -61,6 +62,10 @@
                 clock.innerHTML = d.getHours() + ' PM';
             }
         }
+
+        window.addEventListener('resize', () => {
+            document.getElementById('app').innerHTML = "Window and resize event";
+        })
 
        function myMouseOver(){
         let con = document.getElementsByClassName('container')[0];
