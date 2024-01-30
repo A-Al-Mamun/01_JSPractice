@@ -27,7 +27,7 @@
             position: relative;
             
         }
-        .item{
+        #item{
             position: absolute;
             top: 0;
             left: 0;
@@ -42,8 +42,9 @@
 <body>
     <div id="app">
         <h1 onclick="textChange(this)">Title</h1>
-        <div class="container"  onclick="animate()">
-            <div class="item"></div>
+        <button onclick="myAnimate()">Click Me</button>
+        <div class="container">
+            <div id="item"></div>
         </div>
     </div>
 
@@ -51,8 +52,8 @@
         function textChange(id){
             id.innerHTML = "Animation File Name";
         };
-        function animate(){
-            const item = document.getElementsByClassName('item')[0];
+        function myAnimate(){
+            const item = document.getElementById('item');
             let pos = 0;
             let id = null;
 
