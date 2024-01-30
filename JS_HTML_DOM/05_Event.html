@@ -27,8 +27,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            position: relative;
         }
-        
+        #clock{
+            width: 100px;
+            height: 20px;
+            background: rebeccapurple;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            color: #fff;
+        }
         
     </style>
 </head>
@@ -36,10 +45,23 @@
     <div id="app">
         <div class="container" onmouseover="myMouseOver()" onmouseout="myMouseOut()">
             <p id="text" onmousedown="myTextUpper()">Click here</p>
+            <div id="clock"></div>
         </div>
     </div>
 
     <script> 
+        const clock = document.getElementById('clock');
+
+        clock.addEventListener('click', displayTime);
+        function displayTime(){
+            const d = new Date();
+            if(d <= 11){
+                clock.innerHTML = d.getHours() + ' AM';
+            }else {
+                clock.innerHTML = d.getHours() + ' PM';
+            }
+        }
+
        function myMouseOver(){
         let con = document.getElementsByClassName('container')[0];
         let text = document.getElementById('text');
@@ -55,6 +77,7 @@
 
        function myTextUpper(){
         let text = document.getElementById('text');
+        text.innerHTML = "on Mouse Down";
         text.style.textTransform = 'uppercase';
        }
     </script>
