@@ -42,9 +42,8 @@
 <body>
     <div id="app">
         <h1 onclick="textChange(this)">Title</h1>
-        <button onclick="myAnimate()">Click Me</button>
         <div class="container">
-            <div id="item"></div>
+            <div id="item" onclick="myAnimate()"></div>
         </div>
     </div>
 
@@ -59,7 +58,7 @@
 
             clearInterval(id);
 
-            id = setInterval(frame, 3);
+            id = setInterval(frame, 5);
 
             function frame(){
                 if(pos == 180){

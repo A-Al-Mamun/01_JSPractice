@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript HTML DOM Learning And Practice | Event Practice | Created by A-Al-Mamun</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #app{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-shadow: 5px 5px 8px #00000080;
+        }
+        .container{
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="container" onmouseover="myMouseOver()" onmouseout="myMouseOut()">
+            <p id="text" onmousedown="myTextUpper()">Click here</p>
+        </div>
+    </div>
+
+    <script> 
+       function myMouseOver(){
+        let con = document.getElementsByClassName('container')[0];
+        let text = document.getElementById('text');
+        con.style.background = 'red';
+        text.innerHTML = 'On Mouse Over Running...';
+       }
+       function myMouseOut(){
+        let con = document.getElementsByClassName('container')[0];
+        let text = document.getElementById('text');
+        con.style.background = 'yellow';
+        text.innerHTML = 'On Mouse Out Running...';
+       }
+
+       function myTextUpper(){
+        let text = document.getElementById('text');
+        text.style.textTransform = 'uppercase';
+       }
+    </script>
+</body>
