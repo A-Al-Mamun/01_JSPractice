@@ -18,10 +18,21 @@
         <h1 id="heading">Heading Title</h1>
         <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vero accusantium dolor quaerat impedit! Sequi porro blanditiis quaerat sint cupiditate!</p>
         <a id="click" href="#">Click Me</a>
+        <span id="show"></span>
     </div>
     <script>
         let app = document.getElementById('app');
-        console.log(app.childNodes[1].innerHTML)
+        let heading = document.getElementById('heading');
+        let show = document.getElementById('show');
+
+        console.log(app.childNodes[1].innerHTML);
+        show.innerHTML = heading.nodeName;
+        show.innerHTML = document.body;
+        console.log(show.innerHTML = document.body);
+        console.log(show.innerHTML = document.documentElement);
+        console.log(show.innerHTML = document.TEXT_NODE);
+        console.log(show.innerHTML = document.COMMENT_NODE);
+        // document.getElementById('heading').innerHTML = document.getElementById('app').childNodes[0].nodeValue;
     </script>
 </body>
 </html>
