@@ -16,6 +16,7 @@
 <body>
     <div id="app">
         <h1 id="heading">Heading Title</h1>
+        <span id="name"></span>
         <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vero accusantium dolor quaerat impedit! Sequi porro blanditiis quaerat sint cupiditate!</p>
         <a id="click" href="#">Click Me</a>
         <span id="show"></span>
@@ -33,6 +34,15 @@
         console.log(show.innerHTML = document.TEXT_NODE);
         console.log(show.innerHTML = document.COMMENT_NODE);
         // document.getElementById('heading').innerHTML = document.getElementById('app').childNodes[0].nodeValue;
+
+        // element Create
+        const para = document.createElement('h2');
+        const node = document.createTextNode('Abdullah Al Mamun');
+
+        para.appendChild(node);
+
+        const name = document.getElementById('name');
+        name.appendChild(para);
     </script>
 </body>
 </html>
