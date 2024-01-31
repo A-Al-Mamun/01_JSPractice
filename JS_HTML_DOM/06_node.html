@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Practice | Created By A-Al-Mamun</title>
+    <style>
+        #app{
+            width: 200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1 id="heading">Heading Title</h1>
+        <p id="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis vero accusantium dolor quaerat impedit! Sequi porro blanditiis quaerat sint cupiditate!</p>
+        <a id="click" href="#">Click Me</a>
+    </div>
+    <script>
+        let app = document.getElementById('app');
+        console.log(app.childNodes[1].innerHTML)
+    </script>
+</body>
+</html>
